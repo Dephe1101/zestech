@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zestech/static/css/main.24f1c685.css",
-    "main.js": "/zestech/static/js/main.7d6da93f.js",
+    "main.js": "/zestech/static/js/main.a09460f2.js",
     "static/js/787.24b4dcb8.chunk.js": "/zestech/static/js/787.24b4dcb8.chunk.js",
     "static/media/carousel-3.jpg": "/zestech/static/media/carousel-3.f1d5e509e129eb30a812.jpg",
     "static/media/carousel-15.jpg": "/zestech/static/media/carousel-15.44789f7876f56f21d3db.jpg",
@@ -12,11 +12,11 @@
     "static/media/slick.ttf": "/zestech/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/zestech/static/media/slick.295183786cd8a1389865.woff",
     "main.24f1c685.css.map": "/zestech/static/css/main.24f1c685.css.map",
-    "main.7d6da93f.js.map": "/zestech/static/js/main.7d6da93f.js.map",
+    "main.a09460f2.js.map": "/zestech/static/js/main.a09460f2.js.map",
     "787.24b4dcb8.chunk.js.map": "/zestech/static/js/787.24b4dcb8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.24f1c685.css",
-    "static/js/main.7d6da93f.js"
+    "static/js/main.a09460f2.js"
   ]
 }
