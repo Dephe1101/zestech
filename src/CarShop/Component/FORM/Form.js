@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { API_URL } from '../../../config';
 
 export default function Form() {
     const dispatch = useDispatch()
@@ -28,13 +29,14 @@ export default function Form() {
     const sendItem = (e) => {
         e.preventDefault()
         if (state.tenSP === "" || state.loai === "") {
-            return alert("err")
+            return alert("Tên SP và loại SP không được để trống")
         } else {
             let promise = axios({
-                url: 'https://64b392170efb99d862680ffe.mockapi.io/api/cardList',
+                url: API_URL,
                 method: "POST",
                 data: state
             })
+            promise.then(alert("Tạo sản phảm thành công")).catch("Tạo sản phẩm thất bại")
         }
     }
 
@@ -69,34 +71,32 @@ export default function Form() {
                                         <div className="row">
                                             <div className="col-md-6 mb-4">
                                                 <div className="form-outline">
-                                                    <input onChange={handleChange} name='tenSP' type="text" id="firstName" className="form-control form-control-lg" required />
                                                     <label className="form-label" htmlFor="firstName"  >TenSP</label>
+                                                    <input onChange={handleChange} name='tenSP' type="text" id="firstName" className="form-control form-control-lg" required />
+
                                                 </div>
                                             </div>
                                             <div className="col-md-6 mb-4">
                                                 <div className="form-outline">
-                                                    <input onChange={handleChange} name='giamGia' type="text" id="firstName" className="form-control form-control-lg" required />
                                                     <label className="form-label" htmlFor="firstName"  >GiamGia</label>
-                                                </div>
-                                            </div>
-                                            <div className="col-md-6 mb-4">
-                                                <div className="form-outline">
-                                                    <input onChange={handleChange} name='idSP' type="text" id="lastName" className="form-control form-control-lg" />
-                                                    <label className="form-label" htmlFor="lastName">ID SP</label>
+                                                    <input onChange={handleChange} name='giamGia' type="text" id="firstName" className="form-control form-control-lg" required />
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div className="row">
                                             <div className="col-md-6 mb-4 d-flex align-items-center">
                                                 <div className="form-outline datepicker w-100">
-                                                    <input onChange={handleChange} name='giaTien' type="text" className="form-control form-control-lg" id="birthdayDate" />
                                                     <label htmlFor="birthdayDate" className="form-label">Gia Tien</label>
+                                                    <input onChange={handleChange} name='giaTien' type="text" className="form-control form-control-lg" id="birthdayDate" />
+
                                                 </div>
                                             </div>
                                             <div className="col-md-6 mb-4 d-flex align-items-center">
                                                 <div className="form-outline datepicker w-100">
-                                                    <input onChange={handleChange} name='hinhAnh' type="text" className="form-control form-control-lg" id="birthdayDate" />
                                                     <label htmlFor="birthdayDate" className="form-label">Hinh Anh</label>
+                                                    <input onChange={handleChange} name='hinhAnh' required type="text" className="form-control form-control-lg" id="birthdayDate" />
+
                                                 </div>
 
                                             </div>
@@ -104,14 +104,16 @@ export default function Form() {
                                         <div className="row">
                                             <div className="col-md-6 mb-4 pb-2">
                                                 <div className="form-outline">
-                                                    <input onChange={handleChange} name='loai' type="email" id="emailAddress" className="form-control form-control-lg" />
                                                     <label className="form-label" htmlFor="emailAddress">Loai</label>
+                                                    <input onChange={handleChange} name='loai' type="email" id="emailAddress" className="form-control form-control-lg" />
+
                                                 </div>
                                             </div>
                                             <div className="col-md-6 mb-4 pb-2">
                                                 <div className="form-outline">
-                                                    <input onChange={handleChange} name='content' type="tel" id="phoneNumber" className="form-control form-control-lg" />
                                                     <label className="form-label" htmlFor="phoneNumber">Content</label>
+                                                    <input onChange={handleChange} name='content' type="tel" id="phoneNumber" className="form-control form-control-lg" />
+
                                                 </div>
                                             </div>
                                         </div>

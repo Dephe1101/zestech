@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useTransition } from 'react'
 import { useSpring, animated } from 'react-spring'
+import { API_URL } from '../../../config';
 
 export default function DatHang() {
 
@@ -33,7 +34,7 @@ export default function DatHang() {
             return
         } else {
             let promise = axios({
-                url: 'https://64b392170efb99d862680ffe.mockapi.io/api/ThongTin',
+                url: API_URL,
                 method: "POST",
                 data: StateThongTin
             })
@@ -82,15 +83,15 @@ export default function DatHang() {
 
 
                 <div className='button__fixed'>
-                    <button style={{ position: "fixed", bottom: "4%", right: "30px", zIndex: "100", borderRadius: "40px" }} type="button" className="btn btn-primary py-3 button__position" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    {/* <button style={{ position: "fixed", bottom: "4%", right: "30px", zIndex: "100", borderRadius: "40px" }} type="button" className="btn btn-primary py-3 button__position" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <div className='d-flex align-items-center '>
                             <animated.i style={{ ...propsString, fontSize: "30px", color: "" }} class="fa fa-shopping-cart button__fixed__icon"></animated.i>
                             <div className='ms-3'>
                                 <div className='button__fixed__content' style={{ color: "white", fontSize: "20px" }}> Đăng Ký Mua Ngay</div>
                             </div>
                         </div>
-                    </button>
-                    <button style={{ position: "fixed", bottom: "15%", left: "30px", zIndex: "100", borderRadius: "40px" }} type="button" className="btn btn-primary py-3 button__position" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    </button> */}
+                    {/* <button style={{ position: "fixed", bottom: "15%", left: "30px", zIndex: "100", borderRadius: "40px" }} type="button" className="btn btn-primary py-3 button__position" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <div className='d-flex align-items-center '>
                             <animated.i style={{ ...propsString, fontSize: "30px", color: "" }} class="fab fa-facebook-messenger button__fixed__icon"></animated.i>
                             <div className='ms-3'>
@@ -113,7 +114,17 @@ export default function DatHang() {
                                 <div className='button__fixed__content' style={{ color: "white", fontSize: "20px" }}> 0903836342</div>
                             </div>
                         </div>
-                    </a>
+                    </a> */}
+                    <div class="icon_left">
+                        <a class="icon_phone" href="tel:0931386222" rel="nofollow"><img loading="lazy"
+                            src="https://minhbao.vn/wp-content/themes/minhbao/images/i_call.png" alt="" /></a>
+                        <a class="icon_sms" href="sms:0931386222" rel="nofollow"><img loading="lazy"
+                            src="https://minhbao.vn/wp-content/themes/minhbao/images/i_mail.png" alt="" /></a>
+                        <a class="icon_zalo" href="https://zalo.me/0931386222" rel="nofollow"><img loading="lazy"
+                            src="https://minhbao.vn/wp-content/themes/minhbao/images/i_zalo.png" alt="" /></a>
+                        <a class="icon_messager" href="https://m.me/XAYDUNGMINHBAO" rel="nofollow" target="_blank"><img loading="lazy"
+                            src="https://minhbao.vn/wp-content/themes/minhbao/images/i_messenger.png" alt="" /></a>
+                    </div>
                     {/* Modal */}
                     <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div className="modal-dialog">

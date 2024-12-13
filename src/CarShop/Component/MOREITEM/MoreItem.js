@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import data from "../../DATA/data.json"
 import axios from 'axios';
+import { API_URL } from '../../../config';
 export default function MoreItem() {
     let match = useParams()
     console.log(match);
@@ -12,7 +13,7 @@ export default function MoreItem() {
 
     const handelItem = () => {
         let promise = axios({
-            url: 'https://64b392170efb99d862680ffe.mockapi.io/api/cardList',
+            url: API_URL,
             method: 'GET'
         })
         promise.then(result => {

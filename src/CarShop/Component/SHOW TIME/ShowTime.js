@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { NavLink, useNavigate } from "react-router-dom"
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { API_URL } from '../../../config';
 export default function ShowTime() {
 
     const SampleNextArrow = (props) => {
@@ -57,7 +58,7 @@ export default function ShowTime() {
 
     const handelItem = () => {
         let promise = axios({
-            url: 'https://64b392170efb99d862680ffe.mockapi.io/api/cardList',
+            url: API_URL,
             method: 'GET'
         })
         promise.then(result => {
@@ -79,7 +80,7 @@ export default function ShowTime() {
                 <div className="card-body">
                     <p className="card-text">{item.tenSP}</p>
                     <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
-                    <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
+                    <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
             </div>
 
@@ -94,7 +95,7 @@ export default function ShowTime() {
                 <div className="card-body">
                     <p className="card-text">{item.tenSP}</p>
                     <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
-                    <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
+                    <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
 
                 </div>
             </div>
@@ -123,7 +124,7 @@ export default function ShowTime() {
                 <div className="card-body">
                     <p className="card-text">{item.tenSP}</p>
                     <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
-                    <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item.giamGia.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
+                    <p style={{ textDecoration: "line-through", color: "gray", textAlign: 'center' }}>{item?.giamGia.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                 </div>
             </div>
         })

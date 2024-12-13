@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick';
+import { API_URL } from '../../../config';
 
 export default function CameraPage() {
     const [currentPage, setcurrentPage] = useState(1);
@@ -43,7 +44,7 @@ export default function CameraPage() {
 
     const handelItem = () => {
         let promise = axios({
-            url: 'https://64b392170efb99d862680ffe.mockapi.io/api/cardList',
+            url: API_URL,
             method: 'GET'
         });
         promise.then(result => {
@@ -95,14 +96,14 @@ export default function CameraPage() {
     }, []);
 
     const renderItem = () => {
-        return records.map((item, index) => {
+        return records?.map((item, index) => {
             return <div className='col-md-3 col-4 card__custom'>
                 <div className="card text-start mb-5" style={{ backgroundColor: "transparent", border: "none" }}>
                     <img className="card-img-top" src={item.hinhAnh} alt="Title" />
                     <div className="card-body">
                         <h4 className="card-title">{item.tenSP}</h4>
                         <p className="card-text">{item.giaTien.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
-                        <p style={{ textDecoration: "line-through", color: "gray" }} className="card-text text-center">{item.giamGia.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
+                        <p style={{ textDecoration: "line-through", color: "gray" }} className="card-text text-center">{item.giamGia?.replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</p>
                     </div>
                 </div>
             </div>;
